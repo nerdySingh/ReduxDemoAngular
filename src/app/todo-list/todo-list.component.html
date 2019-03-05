@@ -1,0 +1,14 @@
+
+<h1>Todo List</h1>
+<input type="text" #title (keyup.enter)="addTodo(title)">
+<button (click)="addTodo(title)" >Add</button>
+<ul>
+  <li *ngFor="let t of todosArray | async">
+    <span (click)="toggleTodo(t)" [class.completed]="t.isCompleted">{{ t.title }}</span>
+    <button [class.active] (click)="removeTodo(t)">Remove</button>
+  </li>
+</ul>
+
+
+
+
